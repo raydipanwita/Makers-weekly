@@ -6,3 +6,7 @@ def test_add_five_returns_eight_for_three():
 def test_add_five_returns_fifteen_for_ten():
     result = add_five(10)
     assert result == 15
+
+def test_add_five_returns_twenty_for_fifteen():
+    result = add_five(15)
+    assert result == 20
