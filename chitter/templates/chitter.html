@@ -1,17 +1,14 @@
 <html>
   <title>Chitter</title>
-  <head>MyPosts</head>
+  <head></head>
   <body>
-    <h1>{{messages}} {{time}}</h1>
-
-    <div>
-
-    </div>
-
-    <div>
-
-    </div>
-
+    <h1>My Posts</h1>
+    <!-- {% for mypost in my_posts %} -->
+    {% for post in myposts}
+      <article>
+        <h2>{{post.messages}}</h2>
+      </article>
+    {% endfor %}
     <!-- ... -->
   </body>
 </html>

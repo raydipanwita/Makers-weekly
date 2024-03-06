@@ -1,12 +1,19 @@
 import os
 from flask import Flask, request, render_template
 from lib.database_connection import get_flask_database_connection
+from lib.my_posts_repository import MyPostsRepository
+
 
 # Create a new Flask app
 app = Flask(__name__)
 
 # == Your Routes Here ==
-
+@app.route('/posts')
+def get_posts():
+    connection = get_flask_database_connection(app)
+    mypostsrepo = MyPostsRepository(connection)
+    myposts = mypostsrepo.all()
+    return render_template('chitter.html', myposts=myposts)
 
 # == Example Code Below ==
 
